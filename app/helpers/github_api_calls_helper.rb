@@ -8,5 +8,4 @@ module GithubApiCallsHelper
   def repository_count
     repositories_with_forks.count
   end
-
 end
