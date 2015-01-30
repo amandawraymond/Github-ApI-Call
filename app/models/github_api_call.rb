@@ -5,4 +5,9 @@ class GithubApiCall
     response   = HTTParty.get search_url
     response["items"]
   end
+
+  def self.repo_top_contributor(url)
+    response   = HTTParty.get url
+    response.first["login"]
+  end
 end

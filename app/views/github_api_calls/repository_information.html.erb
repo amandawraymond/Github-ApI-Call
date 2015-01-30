@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="text-center"><%=@repos.count%> Ruby repositories found on github </h1>
+  <h1 class="text-center"><%=@repositories.count%> Ruby repositories found on github </h1>
   <h3 class="text-center">--With more than 5 Forks--</h3>
   <table id="list" class="table table-striped">
     <thead>
@@ -7,14 +7,16 @@
             <th>Name</th>
             <th>Description</th>
             <th>Website</th>
+            <th>Top Contributor</th>
         </tr>
     </thead>
     <tbody>
-          <%@repos.each do |repo|%>
+          <%@repositories.each do |repository|%>
         <tr>
-            <td><%= repo["name"] %></td>
-            <td><%= repo["description"]%></td>
-            <td><%= repo["html_url"] %></td>
+            <td><%= repository["name"] %></td>
+            <td><%= repository["description"]%></td>
+            <td><%= repository["html_url"] %></td>
+            <td><%= @top_contributor %></td>
         </tr>
           <%end%>
     </tbody>
