@@ -1,8 +1,8 @@
 class GithubApiCallsController < ApplicationController
   def repository_information
-    @repositories    = GithubApiCall.github_repo_info("ruby",5, 50)
+    @repositories    = GithubApiCall.github_repository_info("ruby",5, 50)
     @top_contributor = @repositories.each do |repo|
-      GithubApiCall.repo_top_contributor(repo["contributors_url"])
+      GithubApiCall.repository_top_contributor(repo["contributors_url"])
     end
   end
 end
