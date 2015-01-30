@@ -1,8 +1,7 @@
 class GithubApiCall
-  def self.github_repo_info(language, limit)
+  def self.github_repo_info(language,forks,limit)
     language   = URI.encode(language)
-    limit      = limit.to_s
-    search_url = "https://api.github.com/search/repositories?q=language:#{language}&per_page=#{limit}"
+    search_url = "https://api.github.com/search/repositories?q=language:#{language}+forks:%3E#{forks}&per_page=#{limit}"
     response   = HTTParty.get search_url
     response["items"]
   end
