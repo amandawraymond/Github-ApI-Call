@@ -7,7 +7,7 @@ class GithubApiCall
   end
 
   def self.repository_top_contributor(url)
-    response = JSON.parse(HTTParty.get url) 
+    response = HTTParty.get url
     response.first["login"]
   end
 end
