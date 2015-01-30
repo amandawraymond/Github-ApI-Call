@@ -1,6 +1,4 @@
-#[CodeChallenge](https://rivalry-awr.herokuapp.com)
-##For Rivalry
-
+#[Challenge](https://rivalry-awr.herokuapp.com)
 
 ----------------------------------------
 ###Overview:
