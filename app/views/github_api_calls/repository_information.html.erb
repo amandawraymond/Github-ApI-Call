@@ -1,0 +1,20 @@
+<h1 class="text-center"><%=repository_count%> Ruby repositories found on github </h1>
+<h3 class="text-center">--With more than 5 Forks--</h3>
+<table id="list" class="table table-striped">
+  <thead>
+      <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Website</th>
+      </tr>
+  </thead>
+  <tbody>
+        <%repositories_with_forks.each do |repo|%>
+      <tr>
+          <td><%= repo["name"] %></td>
+          <td><%= repo["description"]%></td>
+          <td><%= repo["html_url"] %></td>
+      </tr>
+        <%end%>
+  </tbody>
+</table>
