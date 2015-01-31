@@ -6,8 +6,13 @@ class GithubApiCall
     response["items"]
   end
 
-  def self.repository_top_contributor(url)
-    response = HTTParty.get url
-    response.first["login"]
-  end
+  def self.repositories_top_contributors(repositories)
+    repositories.map do |repo|
+      url = repo["contributors_url"].to_s
+      response = HTTParty.get url
+      response.first
+      # api call limit
+      response.first["login"]
+    end
+  end 
 end

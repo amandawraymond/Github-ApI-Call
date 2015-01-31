@@ -11,14 +11,16 @@
         </tr>
     </thead>
     <tbody>
-          <%@repositories.each do |repository|%>
-        <tr>
+      <%@repositories.each do |repository|%>
+        <%@contributors.each do |contributor|%>
+          <tr>
             <td><%= repository["name"] %></td>
             <td><%= repository["description"]%></td>
             <td><%= repository["html_url"] %></td>
-            <td><%= @top_contributor %></td>
-        </tr>
-          <%end%>
+            <td><%= contributor %></td>
+          </tr>
+        <%end%>
+      <%end%> 
     </tbody>
   </table>
 </div>
