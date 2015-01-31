@@ -11,7 +11,7 @@ class GithubApiCall
       url = repo["contributors_url"].to_s
       response = HTTParty.get url
       if response.first.include?("message")
-        response.first
+        "API rate limit exceeded, try again later"
       else
         response.first["login"]
       end
