@@ -4,23 +4,23 @@
   <table id="list" class="table table-striped">
     <thead>
         <tr>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Website</th>
-            <th>Top Contributor</th>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Website</th>
+          <th>Top Contributor</th>
         </tr>
     </thead>
     <tbody>
+      <% index = 0 %>
       <%@repositories.each do |repository|%>
-        <%@contributors.each do |contributor|%>
-          <tr>
-            <td><%= repository["name"] %></td>
-            <td><%= repository["description"]%></td>
-            <td><%= repository["html_url"] %></td>
-            <td><%= contributor %></td>
-          </tr>
-        <%end%>
-      <%end%> 
+        <tr>
+          <td><%= repository["name"] %></td>
+          <td><%= repository["description"]%></td>
+          <td><%= repository["html_url"] %></td>
+          <td><%= @contributors[index] %></td>
+          <% index += 1 %>
+        </tr>
+      <%end%>
     </tbody>
   </table>
 </div>

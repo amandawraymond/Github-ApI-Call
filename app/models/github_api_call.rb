@@ -11,8 +11,8 @@ class GithubApiCall
       url = repo["contributors_url"].to_s
       response = HTTParty.get url
       response.first
-      # api call limit
-      response.first["login"]
+      # after api call limit uncomment below:
+      # response.first["login"]
     end
   end 
 end
