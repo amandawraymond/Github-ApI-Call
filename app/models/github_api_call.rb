@@ -8,7 +8,7 @@ class GithubApiCall
 
   def self.repositories_top_contributors(repositories)
     repositories.map do |repo|
-      url = repo["contributors_url"].to_s
+      url      = repo["contributors_url"].to_s
       response = HTTParty.get url
       if response.first.include?("message")
         "API rate limit exceeded, try again later"
